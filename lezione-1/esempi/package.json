@@ -1,0 +1,16 @@
+{
+  "name": "laboratorio-nodejs_lezione-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "typing": "node typing",
+    "runtime": "node runtime"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.17.1"
+  }
+}
