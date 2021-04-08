@@ -1,8 +1,11 @@
-const fileFinder = require("./src/fileFinder.js");
+const fileFinder = require("./src/fileFinder");
+const logger = require("./src/logger")
+
+logger.setDebug(true)
 
 if (typeof process.argv[2] !== "string") {
-  console.log("Usage: $ node index.js <search>");
+  logger.info("Usage: $ node index.js <search>");
   return;
 }
 //fileFinder.findInFile("./data/file1.txt", "distrustsa", console.log)
-fileFinder.findInDir("./data", process.argv[2]);
+fileFinder("./data", process.argv[2]);
