@@ -16,4 +16,5 @@ class Logger {
   }
 }
 
+// Attenzione che questo non genera un vero Singleton
 module.exports = new Logger();
