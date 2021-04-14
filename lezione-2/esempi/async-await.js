@@ -23,7 +23,7 @@ async function asyncCaller(ms, label) {
 }
 
 module.exports = asyncWait;
-
+module.exports.asyncCaller = asyncCaller;
 
 if (require.main === module) {
   asyncCaller(3000, "A");

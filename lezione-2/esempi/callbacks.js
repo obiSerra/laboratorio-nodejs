@@ -4,9 +4,10 @@ const utils = require("../../utils/utils");
 
 const starting = utils.getNow();
 
-// Questa funzione genera un wait sincrono
+// Questa funzione genera un wait asincrono
 function asyncWait(ms, label, cb) {
   console.log(`[${label}] Async operation starting after: ${utils.getNow() - starting}ms\n`);
+
   setTimeout(() => {
     console.log(`[${label}] Async operation callback in ${utils.getNow() - starting}ms\n`);
     cb();

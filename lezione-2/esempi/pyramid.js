@@ -8,7 +8,7 @@ const starting = utils.getNow();
 
 // -------------------- Callbacks
 
-//   const cbWait = require("./async");
+//   const cbWait = require("./callbacks");
 
 //   cbWait(200, "1", () => {
 //     console.log(`[1] finished after: ${utils.getNow() - starting}ms\n\n`);
