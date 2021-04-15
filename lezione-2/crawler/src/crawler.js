@@ -3,7 +3,7 @@
 class Crawler {
   constructor(startingUrl) {
     this.startingUrl = startingUrl;
-    console.log("startingUrl", this.startingUrl);
+    console.log("startingUrl", this.startingUrl.href);
   }
 }
 
