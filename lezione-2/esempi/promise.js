@@ -23,6 +23,7 @@ module.exports = asyncWait;
 if (require.main === module) {
   asyncWait(3000, "A")
     .then(() => console.log(`[A] Finished in ${utils.getNow() - starting}ms\n`))
+    .then(() => console.log(`[A] 2 Finished in ${utils.getNow() - starting}ms\n`))
     .catch(err => console.log(err));
 
   asyncWait(1000, "B")
