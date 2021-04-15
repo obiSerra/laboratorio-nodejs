@@ -1,0 +1,19 @@
+{
+  "name": "async-esempi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cb-evt": "node callback-events.js",
+    "cb": "node callbacks.js",
+    "sync": "node sync.js",
+    "events": "node events.js",
+    "promise": "node promise.js",
+    "as-aw": "node async-await.js",
+    "pyramid": "node pyramid.js",
+    "loop": "node async-loop.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
