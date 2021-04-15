@@ -23,6 +23,7 @@ try {
 
 const c = new Crawler(url);
 
-c.run(() => {
+c.run((res) => {
+  console.log(res)
   console.log("pagina scaricata");
 });

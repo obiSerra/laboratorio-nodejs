@@ -1,27 +1,33 @@
 "use strict";
 
 const https = require("https");
+const { url } = require("inspector");
+var HTMLParser = require("node-html-parser");
 
 class Crawler {
   constructor(startingUrl) {
     this.startingUrl = startingUrl;
-    console.log("startingUrl", this.startingUrl.href);
+  }
+
+  findAnc(content) {
+    const dom = HTMLParser.parse(content);
+
+    const urls = dom.querySelectorAll("a").map(a => a.getAttribute("href"));
+    return urls;
   }
 
   getPage(url, onEnd) {
     https
       .get(url, response => {
         console.log("statusCode:", response.statusCode);
-        //console.log("headers:", response.headers);
         let data = "";
         response.on("data", d => {
           data += d;
-          //process.stdout.write(d);
-          //process.stdout.write("\n\n\n---------------------------------------------------\n\n\n");
         });
         response.on("end", () => {
           if (typeof onEnd === "function") {
-            onEnd(data);
+            const urls = this.findAnc(data);
+            onEnd(urls);
           }
         });
       })
