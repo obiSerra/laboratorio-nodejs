@@ -14,6 +14,7 @@ function syncWait(ms) {
 
 }
 
+console.log(`Starting`);
 
 syncWait(3000);
 console.log(`Next operation starting after: ${utils.getNow() - starting}ms`);
