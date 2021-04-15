@@ -1,5 +1,4 @@
-//index.js controlla che venga passato un argomento quando viene chiamato;
-//se e’ cosi’ instanzia Crawler passandogli l’argomento
+"use strict";
 
 const Crawler = require("./src/crawler");
 
@@ -8,7 +7,6 @@ const arg = process.argv[2] || null;
 let url = null;
 
 const usage = "USAGE: $ <command> <url>";
-
 
 if (!arg) {
   console.log(usage);
@@ -24,3 +22,7 @@ try {
 }
 
 const c = new Crawler(url);
+
+c.run(() => {
+  console.log("pagina scaricata");
+});
