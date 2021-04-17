@@ -18,8 +18,12 @@ async function asyncWait(ms, label) {
 }
 
 async function asyncCaller(ms, label) {
-  await asyncWait(ms, label);
-  console.log(`[${label}] Finished in ${utils.getNow() - starting}ms`);
+  try {
+    await asyncWait(ms, label);
+    console.log(`[${label}] Finished in ${utils.getNow() - starting}ms`);
+  } catch (e) {
+    console.log("ERROR");
+  }
 }
 
 module.exports = asyncWait;
