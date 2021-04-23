@@ -3,15 +3,17 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Express', showMe : {show: true} });
 });
 
 router.get('/query', function(req, res, next) {
-  res.send(JSON.stringify(req.query))
+  res.json(req.query)
 });
 
 router.get('/param/:paramValue/other/:otherValue', function(req, res, next) {
-  res.send(JSON.stringify(req.params))
+  const {query, params} = req
+  res.json({query, params})
+  
 });
 
 
