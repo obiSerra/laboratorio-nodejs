@@ -8,3 +8,4 @@
 * Utilizzare almeno una risorsa esterna come Database, Filesystem o un'API esterna
 * Utilizzare almeno 2 delle 4 tecniche di programmazione asincrona che abbiamo visto
 * Contenere almeno 1 Unit Test
+* (Opzionale) Fornito tramite reposity Git
