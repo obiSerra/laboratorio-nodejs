@@ -33,6 +33,19 @@ class DB {
       );
     });
   }
+
+  async listByTitle(tableName, title) {
+    return new Promise((resolve, reject) => {
+      this.connection.execute(
+        `SELECT * from ${tableName} WHERE title LIKE ?`,
+        [`%${title}%`],
+        (error, results) => {
+          if (error) reject(error);
+          resolve(results);
+        }
+      );
+    })
+  }
 }
 
 module.exports = DB;
